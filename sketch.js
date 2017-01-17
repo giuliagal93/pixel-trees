@@ -16,8 +16,8 @@ var anno = 2017;
 function draw() {
     
      
-    for(var x=0;x<width;x+=10){
-    for(var y=0;y<height;y+=10){
+    for(var x=0;x<width;x+=5){
+    for(var y=0;y<height;y+=5){
       
         if ( b>= 0){
       if(random()<(b+1)/100){
