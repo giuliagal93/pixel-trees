@@ -21,32 +21,32 @@ function draw() {
       
         if ( b>= 0){
       if(random()<(b+1)/100){
-        fill(100,200,100);
+        fill(121,164,104);
       }
       if(random()<(b+1)/100){
-        fill(200,250,100);
+        fill(166,189,122);
       }
       if(random()<(b+1)/100){
-        fill(51,158,50);
+        fill(90,134,97);
       }
         
         } else {
             
      if(random()<abs((b+1)/100)){
 
-         fill(51,158,50); 
+         fill(90,134,97); 
          
       }
      
     if(random()<abs((b+1)/100)){
         
-       fill(100,200,100);  
+       fill(121,164,104);  
 
       }
             
       if(random()<abs((b+1)/100)){
                                
-          fill(200,250,100);
+          fill(166,189,122);
 
       }
         }
