@@ -1,9 +1,9 @@
 function setup() {
-  createCanvas(windowWidth,windowHeight);
-  frameRate(1);
-  noStroke(0);
+    createCanvas(windowWidth, windowHeight);
+    frameRate(24);
+    noStroke(0);
 
-  
+
 }
 
 var value = 0;
@@ -14,105 +14,112 @@ var b = 0;
 var anno = 2017;
 
 function draw() {
-    
-     
-    for(var x=0;x<width;x+=5){
-    for(var y=0;y<height;y+=5){
-      
-        if ( b>= 0){
-      if(random()<(b+1)/100){
-        fill(121,164,104);
-      }
-      if(random()<(b+1)/100){
-        fill(166,189,122);
-      }
-      if(random()<(b+1)/100){
-        fill(90,134,97);
-      }
-        
-        } else {
-            
-     if(random()<abs((b+1)/100)){
 
-         fill(90,134,97); 
-         
-      }
-     
-    if(random()<abs((b+1)/100)){
-        
-       fill(121,164,104);  
 
-      }
-            
-      if(random()<abs((b+1)/100)){
-                               
-          fill(166,189,122);
 
-      }
-        }
-        
 
-  
-  //80% alberi
-    
-    rect(x,y,5,5);  
-      
-    }
-  }
-    
-        // RETTANGOLO IN cima
+    // RETTANGOLO IN cima
 
-   
-        fill(230);
-    rect(0,0,width, 50);
-    
+
+    fill(230);
+    rect(0, 0, width, 50);
+
     // RETTANGOLO IN FONDO
     // FILL VARIA CON LA B
     colorMode(HSB);
-    fill(100+b,35,75);
-    rect(0,height-(height/8),width,height/8)
-    
+    fill(100 + b, 35, 75);
+    rect(0, height - (height / 8), width, height / 8)
+
     colorMode(RGB);
-    
-    var tempo = anno - b*5;
-    
+
+    var tempo = anno - b * 5;
+
     /*if (tempo > 2400) {
         tempo = 2400;
     }*/
-    
+
     fill(0);
     textSize(14);
     textFont("Montserrat");
     textAlign(CENTER);
-    text(tempo,width/2,7.5*height/8+4)
+    text(tempo, width / 2, 7.5 * height / 8 + 4)
 
 }
 
 function touchStarted() {
-  value = touchX;
+    value = touchX;
 }
 
 function touchMoved() {
-    
-    if (touchY>(7*height)/8){
-  direction = touchX - value;
-  console.log(value)
-  if(direction > 0) {
-  b = a + 1
-  } else {
-  b = a - 1
-  b = a - 1
 
+    if (touchY > (7 * height) / 8) {
+        direction = touchX - value;
+        console.log(value)
+        if (direction > 0) {
+            b = a + 1
+        } else {
+            b = a - 1
+            b = a - 1
+
+
+        }
+        a = b;
+
+        console.log(b);
+        value = touchX;
+
+    }
     
-  }
-  a = b;
-  
-  console.log(b);
-  value = touchX;
-  
-   }
+    drawTrees();
 }
 
+
+function drawTrees() {
+
+    for (var x = 0; x < width; x += 5) {
+        for (var y = 0; y < height; y += 5) {
+
+            if (b >= 0) {
+                if (random() < (b + 1) / 100) {
+                    fill(121, 164, 104);
+                }
+                if (random() < (b + 1) / 100) {
+                    fill(166, 189, 122);
+                }
+                if (random() < (b + 1) / 100) {
+                    fill(90, 134, 97);
+                }
+
+            } else {
+
+                if (random() < abs((b + 1) / 100)) {
+
+                    fill(90, 134, 97);
+
+                }
+
+                if (random() < abs((b + 1) / 100)) {
+
+                    fill(121, 164, 104);
+
+                }
+
+                if (random() < abs((b + 1) / 100)) {
+
+                    fill(166, 189, 122);
+
+                }
+            }
+
+
+
+            //80% alberi
+
+            rect(x, y, 5, 5);
+
+        }
+    }
+}
 
 /*function windowResize(){
   resizeCanvas(windowWidth,windowHeight)
